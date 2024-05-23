@@ -1,0 +1,102 @@
+
+
+/* Estilo para los campos de texto */
+.text-field {
+    -fx-background-color: #f2f2f2; /* Color de fondo gris claro */
+    -fx-text-fill: #333; /* Color del texto */
+    -fx-font-size: 20px; /* Tamaño de la fuente */
+    -fx-background-radius: 5px; /* Borde redondeado */
+    -fx-padding: 5px; /* Espaciado interno */
+}
+
+/* Estilo para la tabla y las celdas */
+.table-view {
+    -fx-background-color: #fff; /* Color de fondo blanco */
+}
+
+.table-cell {
+    -fx-text-fill: #333; /* Color del texto en las celdas */
+    -fx-font-size: 14px; /* Tamaño de la fuente en las celdas */
+    -fx-alignment: CENTER; /* Alineación centrada */
+    -fx-pref-width: 200px;
+}
+/* style.css */
+
+/* Estilos para el VBox principal */
+.vbox {
+    -fx-background-color: #f0f8ff;
+    -fx-alignment: CENTER;
+    -fx-spacing: 40;
+    fx-padding: 40 20 20 20;
+}
+
+/* Estilos para la etiqueta del título */
+.label-title {
+    -fx-font-size: 24px; /* Tamaño de letra más grande */
+    -fx-font-weight: bold; /* Texto en negrita */
+    -fx-text-fill: #333; /* Color del texto */
+}
+
+/* Estilos para el GridPane */
+.grid-pane {
+    -fx-hgap: 20;
+    -fx-vgap: 10;
+}
+
+/* Estilos para los TextField */
+
+
+/* Estilos para los botones */
+.button {
+    -fx-font-size: 18px; /* Tamaño de letra más grande */
+    -fx-background-color: #4CAF50; /* Color de fondo verde */
+    -fx-text-fill: white; /* Color del texto blanco */
+    -fx-padding: 10 20; /* Espaciado interno */
+    -fx-border-radius: 5; /* Bordes redondeados */
+}
+
+/* Estilos para la etiqueta de estado */
+.label {
+    -fx-font-size: 18px; /* Tamaño de letra más grande */
+    -fx-text-fill: black; /* Color del texto rojo */
+}
+/* General styles */
+.root {
+    -fx-font-family: 'Arial';
+}
+
+.label {
+    -fx-font-size: 14pt;
+}
+
+.text-field, .password-field {
+    -fx-pref-width: 200px;
+}
+
+
+
+.button:hover {
+    -fx-background-color: #005bb5;
+}
+
+
+
+.grid-pane {
+    -fx-hgap: 10;
+    -fx-vgap: 10;
+}
+
+.grid-pane .label {
+    -fx-font-size: 16pt;
+}
+
+.grid-pane .text-field, .grid-pane .password-field {
+    -fx-pref-width: 250px;
+}
+
+.grid-pane .button {
+    -fx-pref-width: 150px;
+}
+
+
+

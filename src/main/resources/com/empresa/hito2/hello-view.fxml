@@ -1,16 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.collections.FXCollections?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.empresa.hito2.HelloController">
+<?import java.lang.String?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.empresa.hito2.HelloController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+    <stylesheets>
+        <String fx:value="style.css" />
+    </stylesheets>
+
+    <HBox alignment="CENTER" spacing="10">
+        <Label text="CRUD Operations" styleClass="label-title"/>
+        <ImageView>
+            <Image url="https://static.ambitionbox.com/assets/v2/images/rs:fit:1280:960:false:false/bG9jYWw6Ly8vbG9nb3Mvb3JpZ2luYWxzL2NydWQtb3BlcmF0aW9ucy5qcGc.png" />
+        </ImageView>
+    </HBox>
+
+    <GridPane hgap="20" vgap="10" styleClass="grid-pane">
+        <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS"/>
+            <ColumnConstraints hgrow="ALWAYS"/>
+        </columnConstraints>
+
+        <Label text="Nombre:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="nameField" GridPane.rowIndex="0" GridPane.columnIndex="1" styleClass="text-field"/>
+
+        <Label text="Edad:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="ageField" GridPane.rowIndex="1" GridPane.columnIndex="1" styleClass="text-field"/>
+
+        <Label text="DNI:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="dniField" GridPane.rowIndex="2" GridPane.columnIndex="1" styleClass="text-field"/>
+
+        <Label text="Fecha de nacimiento:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="birthDateField" GridPane.rowIndex="3" GridPane.columnIndex="1" styleClass="text-field"/>
+
+        <Button text="Create" onAction="#createRecord" GridPane.rowIndex="4" GridPane.columnIndex="0" styleClass="button"/>
+        <Button text="Read" onAction="#readRecord" GridPane.rowIndex="4" GridPane.columnIndex="1" styleClass="button"/>
+        <Button text="Update" onAction="#updateRecord" GridPane.rowIndex="5" GridPane.columnIndex="0" styleClass="button"/>
+        <Button text="Delete" onAction="#deleteRecord" GridPane.rowIndex="5" GridPane.columnIndex="1" styleClass="button"/>
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER">
+        <TextField fx:id="searchField" promptText="Filtrar..." styleClass="text-field"/>
+        <ChoiceBox fx:id="filterChoiceBox" styleClass="choice-box">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="A-Z" />
+                    <String fx:value="Recientes" />
+                </FXCollections>
+            </items>
+        </ChoiceBox>
+        <Button text="Filtrar" onAction="#filterRecords" styleClass="button"/>
+    </HBox>
+
+    <TableView fx:id="tableView" prefHeight="300" prefWidth="600">
+        <columns>
+            <TableColumn fx:id="nameColumn" text="Nombre"/>
+            <TableColumn fx:id="ageColumn" text="Edad"/>
+            <TableColumn fx:id="dniColumn" text="DNI"/>
+            <TableColumn fx:id="birthDateColumn" text="Fecha de nacimiento"/>
+        </columns>
+    </TableView>
+
+    <Label fx:id="statusLabel" styleClass="label"/>
 </VBox>
